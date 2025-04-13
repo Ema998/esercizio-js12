@@ -7,36 +7,28 @@
     </head>
     <body>
         <script>
-            let n = parseInt(prompt('scegliere un prodotto'));
-            let m = prompt('scegliere un prodotto');
-            switch (n) {
-                case 1:
-                    console.log("è stata selezionata l'acqua")
-                    break;
-                case 2:
-                    console.log("è stata selezionata la coca cola")
-                    break;
-                case 3:
-                    console.log("è stata selezionata la birra")
-                    break;
-                default:
-                    console.log("scegliere un prodotto")
-                    break;
+            let choice;
+
+            do {
+                choice = number(prompt("inserisci il numero del prodotto desiderato: 1 - acqua, 2 - coca cola, 3 - aranciata"));
+                
+                switch (choice) {
+                    case "1":
+                    case "acqua":
+                        console.log("è stata scelta acqua");
+                        break;
+                    case "2":
+                    case "coca cola":
+                    case "cocacola":
+                        console.log("è stata scelta coca cola");
+                    case "3":
+                    case "aranciata":
+                        console.log("è stata scelta aranciata");
+                    default:
+                        console.log("prodotto non trovato; riprovare");
+                        break;
                 }
-            switch (m) {
-                case "acqua":
-                    console.log("è stata selezionata l'acqua")
-                    break;
-                case "cola":
-                    console.log("è stata selezionata la coca cola")
-                    break;
-                case "birra":
-                    console.log("è stata selezionata la birra")
-                    break;
-                default:
-                    console.log("prodotto non trovato; scegliere un prodotto")
-                    break;
-                }
+            } while (choice < 1 || choice > 3)
         </script>
     </body>
 </html>
